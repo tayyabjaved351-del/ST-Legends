@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ST Legends Shots</title>
 
 <style>
@@ -10,662 +11,214 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
   min-height:100vh;
+  color:#fff;
   background:
-    radial-gradient(circle at 10% 10%,#7028c8 0%,transparent 30%),
-    radial-gradient(circle at 90% 80%,#006eff 0%,transparent 35%),
-    #070712;
-  color:white;
+    radial-gradient(circle at 15% 5%,rgba(166,40,255,.35),transparent 30%),
+    radial-gradient(circle at 90% 25%,rgba(0,174,255,.22),transparent 28%),
+    radial-gradient(circle at 50% 100%,rgba(255,0,153,.18),transparent 35%),
+    #05050b;
 }
 
 .header{
-  padding:18px 15px;
+  max-width:900px;
+  margin:auto;
+  padding:18px 18px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid rgba(255,255,255,.1);
+  justify-content:space-between;
 }
 
-.logo{
-  font-size:20px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-icon{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:13px;
+  background:linear-gradient(135deg,#ff00cc,#635bff,#00cfff);
+  box-shadow:0 8px 30px rgba(117,70,255,.35);
+  font-size:21px;
+}
+
+.brand-text{
+  font-size:17px;
   font-weight:800;
 }
 
 .pro{
-  background:linear-gradient(135deg,#ff00cc,#4c4cff);
   padding:8px 14px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
-}
-
-.container{
-  max-width:720px;
-  margin:auto;
-  padding:20px 15px 40px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
 }
 
 .hero{
+  max-width:760px;
+  margin:auto;
   text-align:center;
-  padding:25px 10px;
+  padding:65px 20px 35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  color:#cfcfff;
+  font-size:11px;
+  margin-bottom:18px;
 }
 
 .hero h1{
-  font-size:34px;
-  background:linear-gradient(90deg,#ff42d0,#7d62ff,#20dfff);
+  font-size:clamp(42px,9vw,72px);
+  line-height:.98;
+  letter-spacing:-3px;
+  font-weight:900;
+  background:linear-gradient(90deg,#ff4bd8,#8b6cff,#25dfff);
   -webkit-background-clip:text;
+  background-clip:text;
   color:transparent;
 }
 
+.hero h2{
+  margin-top:18px;
+  font-size:20px;
+  color:#fff;
+}
+
 .hero p{
-  color:#aaaabd;
-  margin-top:10px;
-  line-height:1.5;
+  max-width:560px;
+  margin:15px auto 0;
+  color:#9999ad;
+  font-size:14px;
+  line-height:1.7;
 }
 
-.editor{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:24px;
-  padding:18px;
-  backdrop-filter:blur(12px);
+.container{
+  width:min(900px,100%);
+  margin:auto;
+  padding:15px;
 }
 
-.upload{
-  border:2px dashed #6464ff;
-  border-radius:18px;
-  padding:28px 15px;
-  text-align:center;
-  cursor:pointer;
-  background:rgba(90,80,255,.08);
-}
-
-.upload strong{
-  display:block;
-  font-size:18px;
-  margin-bottom:8px;
-}
-
-.upload span{
-  color:#aaaabd;
-  font-size:13px;
-}
-
-#videoInput{
-  display:none;
-}
-
-.video-box{
-  margin-top:18px;
-  background:#000;
-  border-radius:18px;
-  overflow:hidden;
-  display:none;
-}
-
-video{
-  width:100%;
-  max-height:500px;
-  display:block;
-  object-fit:contain;
-}
-
-.controls{
-  display:none;
-  margin-top:15px;
-}
-
-.row{
-  display:flex;
-  gap:8px;
-  margin-top:10px;
-  flex-wrap:wrap;
-}
-
-button,select{
-  border:0;
-  padding:12px 14px;
-  border-radius:12px;
-  background:#20202c;
-  color:white;
-  font-weight:bold;
-}
-
-button{
-  cursor:pointer;
-}
-
-.primary{
-  background:linear-gradient(135deg,#ff00cc,#4c4cff);
-}
-
-.danger{
-  background:#d62945;
-}
-
-.range{
-  width:100%;
-}
-
-.info{
-  color:#aaaabd;
-  font-size:12px;
-  margin-top:8px;
-}
-
-.format-title{
-  margin-top:18px;
-  font-weight:bold;
-}
-
-.format-buttons{
-  display:flex;
-  gap:8px;
-  margin-top:10px;
-}
-
-.format-buttons button.active{
-  background:#5b5bff;
-}
-
-.download{
-  width:100%;
-  margin-top:15px;
-  display:none;
-  background:#20c763;
-}
-
-.features{
+.cards{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:18px;
+  gap:15px;
 }
 
 .card{
-  padding:17px 13px;
-  border-radius:18px;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.1);
+  position:relative;
+  overflow:hidden;
+  min-height:260px;
+  padding:25px;
+  border-radius:25px;
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.105),
+    rgba(255,255,255,.035)
+  );
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 18px 50px rgba(0,0,0,.28);
+  backdrop-filter:blur(18px);
 }
 
-.card .icon{
-  font-size:25px;
-  margin-bottom:8px;
+.card:before{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(116,76,255,.15);
+  filter:blur(30px);
+  right:-50px;
+  top:-50px;
+}
+
+.card.full{
+  grid-column:1 / -1;
+  min-height:220px;
+}
+
+.icon{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:17px;
+  background:linear-gradient(135deg,#ff00cc,#655bff);
+  font-size:27px;
+  margin-bottom:25px;
+  box-shadow:0 10px 30px rgba(105,70,255,.3);
 }
 
 .card h3{
-  font-size:15px;
-  margin-bottom:5px;
+  font-size:22px;
+  margin-bottom:9px;
 }
 
 .card p{
   color:#9999ad;
-  font-size:12px;
-  line-height:1.4;
+  font-size:13px;
+  line-height:1.6;
+  min-height:42px;
 }
 
-.owner{
-  text-align:center;
-  margin-top:25px;
-  padding:22px;
-  border-radius:20px;
-  background:rgba(255,255,255,.06);
+.input,
+.textarea{
+  width:100%;
+  border:1px solid rgba(255,255,255,.12);
+  outline:none;
+  border-radius:13px;
+  padding:14px;
+  margin-top:16px;
+  background:rgba(0,0,0,.3);
+  color:#fff;
+  font-size:13px;
 }
 
-.owner small{
-  color:#88889b;
+.textarea{
+  min-height:120px;
+  resize:vertical;
 }
 
-.owner h2{
-  margin:7px 0 15px;
+.input::placeholder,
+.textarea::placeholder{
+  color:#77778b;
 }
 
-.whatsapp{
-  display:inline-block;
-  text-decoration:none;
-  background:#20c763;
-  color:white;
-  padding:12px 20px;
-  border-radius:25px;
-  font-weight:bold;
+.button{
+  width:100%;
+  border:0;
+  padding:14px;
+  margin-top:10px;
+  border-radius:13px;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ff00cc,#655bff,#009dff);
+  box-shadow:0 10px 25px rgba(93,74,255,.22);
 }
 
-.footer{
-  text-align:center;
-  color:#77778a;
-  padding:25px;
-  font-size:12px;
+.button:active{
+  transform:scale(.98);
 }
 
-@media(max-width:420px){
-  .hero h1{
-    font-size:29px;
-  }
-
-  .features{
-    gap:9px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header class="header">
-  <div class="logo">🎬 ST Legends Shots</div>
-  <div class="pro">PRO</div>
-</header>
-
-<div class="container">
-
-<section class="hero">
-  <h1>Video Editor</h1>
-  <p>Create and edit your Shorts directly in your browser.</p>
-</section>
-
-<section class="editor">
-
-<label class="upload" for="videoInput">
-  <strong>🎥 Upload Your Video</strong>
-  <span>Tap here to choose a video from your phone</span>
-</label>
-
-<input id="videoInput" type="file" accept="video/*">
-
-<div class="video-box" id="videoBox">
-  <video id="video"></video>
-</div>
-
-<div class="controls" id="controls">
-
-  <input
-    id="timeline"
-    class="range"
-    type="range"
-    min="0"
-    value="0"
-    step="0.1"
-  >
-
-  <div class="info" id="timeInfo">
-    00:00 / 00:00
-  </div>
-
-  <div class="row">
-    <button class="primary" onclick="togglePlay()" id="playBtn">
-      ▶ Play
-    </button>
-
-    <button onclick="restartVideo()">
-      🔄 Restart
-    </button>
-
-    <button onclick="muteVideo()" id="muteBtn">
-      🔊 Sound
-    </button>
-  </div>
-
-  <div class="row">
-
-    <button onclick="setSpeed(.5)">0.5x</button>
-    <button onclick="setSpeed(1)">1x</button>
-    <button onclick="setSpeed(1.5)">1.5x</button>
-    <button onclick="setSpeed(2)">2x</button>
-
-  </div>
-
-  <div class="format-title">
-    Video Format
-  </div>
-
-  <div class="format-buttons">
-    <button class="active" onclick="setFormat('9:16',this)">
-      9:16
-    </button>
-
-    <button onclick="setFormat('16:9',this)">
-      16:9
-    </button>
-
-    <button onclick="setFormat('1:1',this)">
-      1:1
-    </button>
-  </div>
-
-  <button
-    class="download"
-    id="downloadBtn"
-    onclick="downloadVideo()"
-  >
-    ⬇️ Download Video
-  </button>
-
-</div>
-
-</section>
-
-<section class="features">
-
-<div class="card">
-  <div class="icon">✂️</div>
-  <h3>Trim & Cut</h3>
-  <p>Video editing tools are being added step by step.</p>
-</div>
-
-<div class="card">
-  <div class="icon">🎨</div>
-  <h3>Effects</h3>
-  <p>Add filters and visual effects to your videos.</p>
-</div>
-
-<div class="card">
-  <div class="icon">📱</div>
-  <h3>Shorts 9:16</h3>
-  <p>Prepare your video for vertical Shorts.</p>
-</div>
-
-<div class="card">
-  <div class="icon">📺</div>
-  <h3>HD Export</h3>
-  <p>High-quality export features will be added.</p>
-</div>
-
-</section>
-
-<section class="owner">
-  <small>APP OWNER</small>
-  <h2>👑 Tayyab Rajpoot</h2>
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/923041393918"
-    target="_blank"
-  >
-    🟢 WhatsApp
-  </a>
-</section>
-
-</div>
-
-<footer class="footer">
-© 2026 ST Legends Shots
-<br>
-Created by Tayyab Rajpoot
-</footer>
-
-<script>
-
-const input = document.getElementById("videoInput");
-const video = document.getElementById("video");
-const videoBox = document.getElementById("videoBox");
-const controls = document.getElementById("controls");
-const timeline = document.getElementById("timeline");
-const timeInfo = document.getElementById("timeInfo");
-const playBtn = document.getElementById("playBtn");
-const muteBtn = document.getElementById("muteBtn");
-const downloadBtn = document.getElementById("downloadBtn");
-
-let videoURL = "";
-
-input.addEventListener("change", function(){
-
-  const file = this.files[0];
-
-  if(!file) return;
-
-  if(videoURL){
-    URL.revokeObjectURL(videoURL);
-  }
-
-  videoURL = URL.createObjectURL(file);
-
-  video.src = videoURL;
-
-  videoBox.style.display = "block";
-  controls.style.display = "block";
-  downloadBtn.style.display = "block";
-
-  video.load();
-
-});
-
-video.addEventListener("loadedmetadata", function(){
-
-  timeline.max = video.duration;
-
-  updateTime();
-
-});
-
-video.addEventListener("timeupdate", updateTime);
-
-function updateTime(){
-
-  timeline.value = video.currentTime;
-
-  timeInfo.textContent =
-    formatTime(video.currentTime) +
-    " / " +
-    formatTime(video.duration || 0);
-
-}
-
-timeline.addEventListener("input", function(){
-
-  video.currentTime = this.value;
-
-});
-
-function togglePlay(){
-
-  if(video.paused){
-
-    video.play();
-
-    playBtn.textContent = "⏸ Pause";
-
-  }else{
-
-    video.pause();
-
-    playBtn.textContent = "▶ Play";
-
-  }
-
-}
-
-function restartVideo(){
-
-  video.currentTime = 0;
-  video.play();
-
-  playBtn.textContent = "⏸ Pause";
-
-}
-
-function muteVideo(){
-
-  video.muted = !video.muted;
-
-  muteBtn.textContent =
-    video.muted ? "🔇 Muted" : "🔊 Sound";
-
-}
-
-function setSpeed(speed){
-
-  video.playbackRate = speed;
-
-}
-
-function formatTime(seconds){
-
-  if(!isFinite(seconds)) return "00:00";
-
-  const minutes = Math.floor(seconds / 60);
-
-  const secs = Math.floor(seconds % 60);
-
-  return String(minutes).padStart(2,"0")
-    + ":" +
-    String(secs).padStart(2,"0");
-
-}
-
-function setFormat(format, button){
-
-  document.querySelectorAll(".format-buttons button")
-    .forEach(btn => btn.classList.remove("active"));
-
-  button.classList.add("active");
-
-  if(format === "9:16"){
-
-    video.style.aspectRatio = "9 / 16";
-
-  }
-
-  if(format === "16:9"){
-
-    video.style.aspectRatio = "16 / 9";
-
-  }
-
-  if(format === "1:1"){
-
-    video.style.aspectRatio = "1 / 1";
-
-  }
-
-}
-
-function downloadVideo(){
-
-  if(!videoURL) return;
-
-  const a = document.createElement("a");
-
-  a.href = videoURL;
-
-  a.download = "ST-Legends-Video.mp4";
-
-  document.body.appendChild(a);
-
-  a.click();
-
-  a.remove();
-
-}
-
-</script>
-<script>
-function openYouTube(){
-
-  const link = document.getElementById("youtubeLink").value.trim();
-  const message = document.getElementById("youtubeMessage");
-
-  if(!link){
-    message.textContent = "⚠️ Pehle YouTube link paste karo.";
-    return;
-  }
-
-  if(!link.includes("youtube.com") && !link.includes("youtu.be")){
-    message.textContent = "⚠️ Valid YouTube link paste karo.";
-    return;
-  }
-
-  window.open(link, "_blank");
-
-  message.textContent =
-    "✅ YouTube video open ho gayi. Apni ya authorized video ko editing ke liye upload karo.";
-}
-      </script>
-  <section class="editor" style="margin-top:20px;">
-  <h2>✂️ Quick Trim</h2>
-  <p style="color:#aaaabd;margin:8px 0 15px;">
-    Apni video upload karo aur start/end set karke preview karo.
-  </p>
-
-  <input id="trimVideo" type="file" accept="video/*">
-
-  <video id="trimPreview"
-    controls
-    style="width:100%;margin-top:15px;border-radius:15px;display:none;">
-  </video>
-
-  <div style="display:flex;gap:10px;margin-top:12px;">
-    <button onclick="setTrimStart()">⏱️ Start</button>
-    <button onclick="setTrimEnd()">⏱️ End</button>
-  </div>
-
-  <p id="trimInfo" style="color:#aaaabd;font-size:13px;margin-top:12px;">
-    Start: 0s | End: 0s
-  </p>
-</section>
-
-<script>
-let trimStart = 0;
-let trimEnd = 0;
-
-const trimInput = document.getElementById("trimVideo");
-const trimPreview = document.getElementById("trimPreview");
-const trimInfo = document.getElementById("trimInfo");
-
-trimInput.addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  trimPreview.src = URL.createObjectURL(file);
-  trimPreview.style.display = "block";
-
-  trimPreview.onloadedmetadata = function () {
-    trimEnd = trimPreview.duration;
-    updateTrimInfo();
-  };
-});
-
-function setTrimStart() {
-  trimStart = trimPreview.currentTime;
-  updateTrimInfo();
-}
-
-function setTrimEnd() {
-  trimEnd = trimPreview.currentTime;
-  updateTrimInfo();
-}
-
-function updateTrimInfo() {
-  trimInfo.textContent =
-    "Start: " + trimStart.toFixed(1) +
-    "s | End: " + trimEnd.toFixed(1) + "s";
-}
-</script>
-</body>
-  <section class="editor" style="margin-top:20px;">
-  <h2>▶️ YouTube to Shorts</h2>
-  <p style="color:#aaaabd;margin:8px 0 15px;">
-    Apni ya authorized YouTube video ka link paste karo.
-  </p>
-
-  <input
-    id="youtubeLink"
-    type="url"
-    placeholder="Paste YouTube link here"
-    style="width:100%;padding:15px;border:0;border-radius:12px;"
-  >
-
-  <button
-    onclick="openYouTube()"
-    style="width:100%;margin-top:10px;background:linear-gradient(135deg,#ff00cc,#4c4cff);color:white;border:0;padding:15px;border-radius:12px;font-weight:bold;"
-  >
-    🎬 Open YouTube Video
-  </button>
-
-  <p id="youtubeMessage" style="margin-top:12px;color:#aaaabd;font-size:13px;"></p>
-  </section>
-</html>
+.message{
+  color:#a8a8
