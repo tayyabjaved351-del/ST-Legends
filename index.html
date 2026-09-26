@@ -132,4 +132,437 @@ button,select{
   border-radius:12px;
   background:#20202c;
   color:white;
-  font
+  font-weight:bold;
+}
+
+button{
+  cursor:pointer;
+}
+
+.primary{
+  background:linear-gradient(135deg,#ff00cc,#4c4cff);
+}
+
+.danger{
+  background:#d62945;
+}
+
+.range{
+  width:100%;
+}
+
+.info{
+  color:#aaaabd;
+  font-size:12px;
+  margin-top:8px;
+}
+
+.format-title{
+  margin-top:18px;
+  font-weight:bold;
+}
+
+.format-buttons{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+}
+
+.format-buttons button.active{
+  background:#5b5bff;
+}
+
+.download{
+  width:100%;
+  margin-top:15px;
+  display:none;
+  background:#20c763;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:18px;
+}
+
+.card{
+  padding:17px 13px;
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.card .icon{
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.card h3{
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.card p{
+  color:#9999ad;
+  font-size:12px;
+  line-height:1.4;
+}
+
+.owner{
+  text-align:center;
+  margin-top:25px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+}
+
+.owner small{
+  color:#88889b;
+}
+
+.owner h2{
+  margin:7px 0 15px;
+}
+
+.whatsapp{
+  display:inline-block;
+  text-decoration:none;
+  background:#20c763;
+  color:white;
+  padding:12px 20px;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+.footer{
+  text-align:center;
+  color:#77778a;
+  padding:25px;
+  font-size:12px;
+}
+
+@media(max-width:420px){
+  .hero h1{
+    font-size:29px;
+  }
+
+  .features{
+    gap:9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">🎬 ST Legends Shots</div>
+  <div class="pro">PRO</div>
+</header>
+
+<div class="container">
+
+<section class="hero">
+  <h1>Video Editor</h1>
+  <p>Create and edit your Shorts directly in your browser.</p>
+</section>
+
+<section class="editor">
+
+<label class="upload" for="videoInput">
+  <strong>🎥 Upload Your Video</strong>
+  <span>Tap here to choose a video from your phone</span>
+</label>
+
+<input id="videoInput" type="file" accept="video/*">
+
+<div class="video-box" id="videoBox">
+  <video id="video"></video>
+</div>
+
+<div class="controls" id="controls">
+
+  <input
+    id="timeline"
+    class="range"
+    type="range"
+    min="0"
+    value="0"
+    step="0.1"
+  >
+
+  <div class="info" id="timeInfo">
+    00:00 / 00:00
+  </div>
+
+  <div class="row">
+    <button class="primary" onclick="togglePlay()" id="playBtn">
+      ▶ Play
+    </button>
+
+    <button onclick="restartVideo()">
+      🔄 Restart
+    </button>
+
+    <button onclick="muteVideo()" id="muteBtn">
+      🔊 Sound
+    </button>
+  </div>
+
+  <div class="row">
+
+    <button onclick="setSpeed(.5)">0.5x</button>
+    <button onclick="setSpeed(1)">1x</button>
+    <button onclick="setSpeed(1.5)">1.5x</button>
+    <button onclick="setSpeed(2)">2x</button>
+
+  </div>
+
+  <div class="format-title">
+    Video Format
+  </div>
+
+  <div class="format-buttons">
+    <button class="active" onclick="setFormat('9:16',this)">
+      9:16
+    </button>
+
+    <button onclick="setFormat('16:9',this)">
+      16:9
+    </button>
+
+    <button onclick="setFormat('1:1',this)">
+      1:1
+    </button>
+  </div>
+
+  <button
+    class="download"
+    id="downloadBtn"
+    onclick="downloadVideo()"
+  >
+    ⬇️ Download Video
+  </button>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="card">
+  <div class="icon">✂️</div>
+  <h3>Trim & Cut</h3>
+  <p>Video editing tools are being added step by step.</p>
+</div>
+
+<div class="card">
+  <div class="icon">🎨</div>
+  <h3>Effects</h3>
+  <p>Add filters and visual effects to your videos.</p>
+</div>
+
+<div class="card">
+  <div class="icon">📱</div>
+  <h3>Shorts 9:16</h3>
+  <p>Prepare your video for vertical Shorts.</p>
+</div>
+
+<div class="card">
+  <div class="icon">📺</div>
+  <h3>HD Export</h3>
+  <p>High-quality export features will be added.</p>
+</div>
+
+</section>
+
+<section class="owner">
+  <small>APP OWNER</small>
+  <h2>👑 Tayyab Rajpoot</h2>
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/923041393918"
+    target="_blank"
+  >
+    🟢 WhatsApp
+  </a>
+</section>
+
+</div>
+
+<footer class="footer">
+© 2026 ST Legends Shots
+<br>
+Created by Tayyab Rajpoot
+</footer>
+
+<script>
+
+const input = document.getElementById("videoInput");
+const video = document.getElementById("video");
+const videoBox = document.getElementById("videoBox");
+const controls = document.getElementById("controls");
+const timeline = document.getElementById("timeline");
+const timeInfo = document.getElementById("timeInfo");
+const playBtn = document.getElementById("playBtn");
+const muteBtn = document.getElementById("muteBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+
+let videoURL = "";
+
+input.addEventListener("change", function(){
+
+  const file = this.files[0];
+
+  if(!file) return;
+
+  if(videoURL){
+    URL.revokeObjectURL(videoURL);
+  }
+
+  videoURL = URL.createObjectURL(file);
+
+  video.src = videoURL;
+
+  videoBox.style.display = "block";
+  controls.style.display = "block";
+  downloadBtn.style.display = "block";
+
+  video.load();
+
+});
+
+video.addEventListener("loadedmetadata", function(){
+
+  timeline.max = video.duration;
+
+  updateTime();
+
+});
+
+video.addEventListener("timeupdate", updateTime);
+
+function updateTime(){
+
+  timeline.value = video.currentTime;
+
+  timeInfo.textContent =
+    formatTime(video.currentTime) +
+    " / " +
+    formatTime(video.duration || 0);
+
+}
+
+timeline.addEventListener("input", function(){
+
+  video.currentTime = this.value;
+
+});
+
+function togglePlay(){
+
+  if(video.paused){
+
+    video.play();
+
+    playBtn.textContent = "⏸ Pause";
+
+  }else{
+
+    video.pause();
+
+    playBtn.textContent = "▶ Play";
+
+  }
+
+}
+
+function restartVideo(){
+
+  video.currentTime = 0;
+  video.play();
+
+  playBtn.textContent = "⏸ Pause";
+
+}
+
+function muteVideo(){
+
+  video.muted = !video.muted;
+
+  muteBtn.textContent =
+    video.muted ? "🔇 Muted" : "🔊 Sound";
+
+}
+
+function setSpeed(speed){
+
+  video.playbackRate = speed;
+
+}
+
+function formatTime(seconds){
+
+  if(!isFinite(seconds)) return "00:00";
+
+  const minutes = Math.floor(seconds / 60);
+
+  const secs = Math.floor(seconds % 60);
+
+  return String(minutes).padStart(2,"0")
+    + ":" +
+    String(secs).padStart(2,"0");
+
+}
+
+function setFormat(format, button){
+
+  document.querySelectorAll(".format-buttons button")
+    .forEach(btn => btn.classList.remove("active"));
+
+  button.classList.add("active");
+
+  if(format === "9:16"){
+
+    video.style.aspectRatio = "9 / 16";
+
+  }
+
+  if(format === "16:9"){
+
+    video.style.aspectRatio = "16 / 9";
+
+  }
+
+  if(format === "1:1"){
+
+    video.style.aspectRatio = "1 / 1";
+
+  }
+
+}
+
+function downloadVideo(){
+
+  if(!videoURL) return;
+
+  const a = document.createElement("a");
+
+  a.href = videoURL;
+
+  a.download = "ST-Legends-Video.mp4";
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  a.remove();
+
+}
+
+</script>
+
+</body>
+</html>
