@@ -563,7 +563,28 @@ function downloadVideo(){
 }
 
 </script>
+<script>
+function openYouTube(){
 
+  const link = document.getElementById("youtubeLink").value.trim();
+  const message = document.getElementById("youtubeMessage");
+
+  if(!link){
+    message.textContent = "⚠️ Pehle YouTube link paste karo.";
+    return;
+  }
+
+  if(!link.includes("youtube.com") && !link.includes("youtu.be")){
+    message.textContent = "⚠️ Valid YouTube link paste karo.";
+    return;
+  }
+
+  window.open(link, "_blank");
+
+  message.textContent =
+    "✅ YouTube video open ho gayi. Apni ya authorized video ko editing ke liye upload karo.";
+}
+      </script>
 </body>
   <section class="editor" style="margin-top:20px;">
   <h2>▶️ YouTube to Shorts</h2>
