@@ -221,4 +221,286 @@ body{
 }
 
 .message{
-  color:#a8a8
+  color:#a8a8bb;
+  font-size:12px;
+  line-height:1.5;
+  margin-top:10px;
+}
+
+.contact{
+  margin-top:18px;
+  padding:30px 20px;
+  text-align:center;
+  border-radius:25px;
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.09),
+    rgba(255,255,255,.035)
+  );
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.contact-label{
+  color:#77778b;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.contact h3{
+  font-size:24px;
+  margin:8px 0 17px;
+}
+
+.whatsapp{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:13px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  background:#20c763;
+  font-size:13px;
+  font-weight:800;
+  box-shadow:0 10px 25px rgba(32,199,99,.2);
+}
+
+.footer{
+  text-align:center;
+  padding:30px 10px;
+  color:#5f5f72;
+  font-size:11px;
+  line-height:1.7;
+}
+
+@media(max-width:600px){
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card.full{
+    grid-column:auto;
+  }
+
+  .card{
+    min-height:auto;
+  }
+
+  .brand-text{
+    font-size:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="brand">
+    <div class="brand-icon">🎬</div>
+    <div class="brand-text">ST Legends Shots</div>
+  </div>
+
+  <div class="pro">PRO</div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="badge">✨ AI VIDEO CREATION PLATFORM</div>
+
+  <h1>Create.<br>Edit.<br>Go Viral.</h1>
+
+  <h2>ST Legends Shots</h2>
+
+  <p>
+    Create amazing Shorts from your ideas and
+    transform your scripts into video projects.
+  </p>
+
+</section>
+
+
+<main class="container">
+
+<section class="cards">
+
+
+<!-- YOUTUBE -->
+
+<div class="card">
+
+  <div class="icon">▶️</div>
+
+  <h3>YouTube → Shorts</h3>
+
+  <p>
+    Paste your own or authorized YouTube video link
+    and open it for your Shorts workflow.
+  </p>
+
+  <input
+    id="youtubeLink"
+    class="input"
+    type="url"
+    placeholder="Paste YouTube link..."
+  >
+
+  <button
+    class="button"
+    onclick="openYouTube()"
+  >
+    Create Short →
+  </button>
+
+  <div
+    id="youtubeMessage"
+    class="message"
+  ></div>
+
+</div>
+
+
+<!-- SCRIPT -->
+
+<div class="card">
+
+  <div class="icon">🤖</div>
+
+  <h3>Script → Video</h3>
+
+  <p>
+    Write your idea or complete script and
+    prepare your video project.
+  </p>
+
+  <textarea
+    id="script"
+    class="textarea"
+    placeholder="Write your script here..."
+  ></textarea>
+
+  <button
+    class="button"
+    onclick="createProject()"
+  >
+    Create Video →
+  </button>
+
+  <div
+    id="scriptMessage"
+    class="message"
+  ></div>
+
+</div>
+
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+  <div class="contact-label">
+    APP OWNER
+  </div>
+
+  <h3>👑 Tayyab Rajpoot</h3>
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/923041393918"
+    target="_blank"
+  >
+    🟢 WhatsApp — Contact Me
+  </a>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+  © 2026 ST Legends Shots
+  <br>
+  Created by Tayyab Rajpoot
+
+</footer>
+
+
+<script>
+
+function openYouTube(){
+
+  const link =
+    document.getElementById("youtubeLink").value.trim();
+
+  const message =
+    document.getElementById("youtubeMessage");
+
+  if(!link){
+
+    message.textContent =
+      "⚠️ Please paste a YouTube link first.";
+
+    return;
+  }
+
+  if(
+    !link.includes("youtube.com") &&
+    !link.includes("youtu.be")
+  ){
+
+    message.textContent =
+      "⚠️ Please enter a valid YouTube link.";
+
+    return;
+  }
+
+  window.open(link,"_blank");
+
+  message.textContent =
+    "✅ YouTube link opened. Use your own or authorized video.";
+
+}
+
+
+function createProject(){
+
+  const script =
+    document.getElementById("script").value.trim();
+
+  const message =
+    document.getElementById("scriptMessage");
+
+  if(!script){
+
+    message.textContent =
+      "⚠️ Please write your script first.";
+
+    return;
+  }
+
+  message.textContent =
+    "✅ Video project created! Script is ready.";
+
+}
+
+</script>
+
+</body>
+</html>
