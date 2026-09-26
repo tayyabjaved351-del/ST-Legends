@@ -585,6 +585,66 @@ function openYouTube(){
     "✅ YouTube video open ho gayi. Apni ya authorized video ko editing ke liye upload karo.";
 }
       </script>
+  <section class="editor" style="margin-top:20px;">
+  <h2>✂️ Quick Trim</h2>
+  <p style="color:#aaaabd;margin:8px 0 15px;">
+    Apni video upload karo aur start/end set karke preview karo.
+  </p>
+
+  <input id="trimVideo" type="file" accept="video/*">
+
+  <video id="trimPreview"
+    controls
+    style="width:100%;margin-top:15px;border-radius:15px;display:none;">
+  </video>
+
+  <div style="display:flex;gap:10px;margin-top:12px;">
+    <button onclick="setTrimStart()">⏱️ Start</button>
+    <button onclick="setTrimEnd()">⏱️ End</button>
+  </div>
+
+  <p id="trimInfo" style="color:#aaaabd;font-size:13px;margin-top:12px;">
+    Start: 0s | End: 0s
+  </p>
+</section>
+
+<script>
+let trimStart = 0;
+let trimEnd = 0;
+
+const trimInput = document.getElementById("trimVideo");
+const trimPreview = document.getElementById("trimPreview");
+const trimInfo = document.getElementById("trimInfo");
+
+trimInput.addEventListener("change", function () {
+  const file = this.files[0];
+  if (!file) return;
+
+  trimPreview.src = URL.createObjectURL(file);
+  trimPreview.style.display = "block";
+
+  trimPreview.onloadedmetadata = function () {
+    trimEnd = trimPreview.duration;
+    updateTrimInfo();
+  };
+});
+
+function setTrimStart() {
+  trimStart = trimPreview.currentTime;
+  updateTrimInfo();
+}
+
+function setTrimEnd() {
+  trimEnd = trimPreview.currentTime;
+  updateTrimInfo();
+}
+
+function updateTrimInfo() {
+  trimInfo.textContent =
+    "Start: " + trimStart.toFixed(1) +
+    "s | End: " + trimEnd.toFixed(1) + "s";
+}
+</script>
 </body>
   <section class="editor" style="margin-top:20px;">
   <h2>▶️ YouTube to Shorts</h2>
