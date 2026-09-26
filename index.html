@@ -1,19 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ST Legends Shots</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ST Legends Shots</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  color:white;
+  background:
+    radial-gradient(circle at 10% 10%,#7028c8 0%,transparent 32%),
+    radial-gradient(circle at 90% 80%,#006eff 0%,transparent 35%),
+    #070712;
+}
+
+.header{
+  padding:20px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  font-size:21px;
+  font-weight:800;
+}
+
+.pro{
+  background:linear-gradient(135deg,#ff00cc,#4c4cff);
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.hero{
+  text-align:center;
+  padding:42px 20px 28px;
+}
+
+.hero h1{
+  font-size:40px;
+  line-height:1.1;
+  margin-bottom:14px;
+  background:linear-gradient(90deg,#ff42d0,#7d62ff,#20dfff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  color:#bfc0d0;
+  font-size:15px;
+  line-height:1.6;
+  max-width:520px;
+  margin:auto;
+}
+
+.main{
+  padding:15px;
+  max-width:720px;
+  margin:auto;
+}
+
+.youtube{
+  background:linear-gradient(135deg,#ff1744,#a90025);
+  padding:21px;
+  border-radius:23px;
+  margin-bottom:18px;
+  box-shadow:0 12px 35px rgba(255,0,60,.25);
+}
+
+.youtube h2{
+  margin-bottom:8px;
+  font-size:21px;
+}
+
+.youtube p{
+  color:#ffd9df;
+  font-size:13px;
+}
+
+.input{
+  width:100%;
+  padding:15px;
+  border:0;
+  outline:none;
+  border-radius:13px;
+  margin-top:14px;
+  background:white;
+  color:#222;
+  font-size:14px;
+}
+
+.create{
+  width:100%;
+  border:0;
+  padding:15px;
+  margin-top:10px;
+  border-radius:13px;
+  background:#111;
+  color:white;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.card{
+  padding:20px 15px;
+  min-height:150px;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.card p{
+  color:#aaaabd;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.owner{
+  margin:25px 15px 0;
+  padding:25px 18px;
+  text-align:center;
+  border-radius:23px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.owner-title{
+  color:#9999ad;
+  font-size:12px;
+  margin-bottom:7px;
+}
+
+.owner-name{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:17px;
+}
+
+.whatsapp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  text-decoration:none;
+  color:white;
+  background:#20c763;
+  padding:13px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:14px;
+  box-shadow:0 8px 25px rgba(32,199,99,.25);
+}
+
+.footer{
+  text-align:center;
+  color:#77778a;
+  padding:25px 10px;
+  font-size:12px;
+}
+
+@media(max-width:420px){
+  .hero h1{
+    font-size:34px;
+  }
+
+  .grid{
+    gap:10px;
+  }
+
+  .card{
+    padding:17px 12px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <h1>ST Legends Shots</h1>
-  <p>AI Video Maker & Editor</p>
 
-  <button>YouTube to Shorts</button>
-  <button>Video Editor</button>
-  <button>Script to Video</button>
-  <button>Effects & Filters</button>
-  <button>HD Export</button>
+<header class="header">
+  <div class="logo">🎬 ST Legends Shots</div>
+  <div class="pro">PRO</div>
+</header>
+
+<section class="hero">
+  <h1>Create Amazing Shorts</h1>
+
+  <p>
+    Edit videos, create Shorts, add effects and turn your ideas
+    into amazing videos — all in one place.
+  </p>
+</section>
+
+<main class="main">
+
+  <section class="youtube">
+    <h2>▶️ YouTube to Shorts</h2>
+
+    <p>
+      Use your own or authorized video link to create Shorts.
+    </p>
+
+    <input
+      class="input"
+      type="text"
+      placeholder="Paste YouTube link here"
+    >
+
+    <button class="create">
+      ✨ Create Short
+    </button>
+  </section>
+
+
+  <section class="grid">
+
+    <div class="card">
+      <div class="icon">✂️</div>
+      <h3>Video Editor</h3>
+      <p>
+        Trim, cut, split, crop and edit your videos.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>Script to Video</h3>
+      <p>
+        Turn your script ideas into video projects.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Effects & Filters</h3>
+      <p>
+        Add modern effects, filters and transitions.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌈</div>
+      <h3>Color Effects</h3>
+      <p>
+        Improve colors, brightness and cinematic looks.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>Trending Style</h3>
+      <p>
+        Create modern Shorts with stylish effects.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📺</div>
+      <h3>HD Export</h3>
+      <p>
+        Export your finished project in high quality.
+      </p>
+    </div>
+
+  </section>
+
+
+  <section class="owner">
+
+    <div class="owner-title">
+      APP OWNER
+    </div>
+
+    <div class="owner-name">
+      👑 Tayyab Rajpoot
+    </div>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/923041393918"
+      target="_blank"
+    >
+      🟢 WhatsApp — Contact Me
+    </a>
+
+  </section>
+
+</main>
+
+
+<footer class="footer">
+  © 2026 ST Legends Shots
+  <br>
+  Created by Tayyab Rajpoot
+</footer>
+
 </body>
 </html>
