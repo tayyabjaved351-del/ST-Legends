@@ -4,295 +4,283 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Freshorts - Create Free Shorts from YouTube Links. Fast, Simple & Easy. Owner by Tayyab Rajpoot.">
+<title>ST Legends - YouTube Link to Shorts</title>
 
-<meta name="theme-color" content="#080b18">
+<meta name="description"
+content="ST Legends - Create Free Shorts from YouTube Links. Fast, simple and easy. Owner by Tayyab Rajpoot.">
 
-<title>Legends Shots- YouTube Link to Free Shorts</title>
+<meta name="theme-color" content="#070713">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
 }
 
 body{
+    font-family:Arial,Helvetica,sans-serif;
     min-height:100vh;
-    color:white;
+    color:#fff;
     background:
-    radial-gradient(circle at 20% 20%, #343cff55, transparent 30%),
-    radial-gradient(circle at 80% 30%, #ff00cc44, transparent 30%),
-    radial-gradient(circle at 50% 90%, #00d9ff33, transparent 35%),
-    linear-gradient(135deg,#050714,#0c1028,#080812);
+    radial-gradient(circle at 15% 15%,#673cff55,transparent 28%),
+    radial-gradient(circle at 85% 20%,#ff1b9b44,transparent 30%),
+    radial-gradient(circle at 50% 100%,#00d9ff33,transparent 35%),
+    linear-gradient(135deg,#05050d,#0b0b20,#05050d);
     overflow-x:hidden;
 }
 
-/* Background lights */
-body::before,
-body::after{
-    content:"";
-    position:fixed;
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    filter:blur(80px);
-    z-index:-1;
-}
-
-body::before{
-    background:#5b4cff;
-    top:-100px;
-    left:-100px;
-}
-
-body::after{
-    background:#ff0099;
-    right:-100px;
-    bottom:-100px;
-}
-
-/* Header */
+/* TOP */
 header{
     text-align:center;
-    padding:45px 20px 20px;
+    padding:45px 20px 25px;
 }
 
 .logo{
     display:inline-block;
-    padding:12px 24px;
-    border:1px solid #ffffff30;
-    border-radius:30px;
-    background:#ffffff12;
-    backdrop-filter:blur(12px);
-    box-shadow:0 0 30px #6d5cff44;
-    font-size:18px;
-    font-weight:bold;
-    letter-spacing:2px;
+    padding:12px 25px;
+    border-radius:50px;
+    border:1px solid #ffffff25;
+    background:#ffffff0d;
+    box-shadow:0 0 35px #704cff55;
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:3px;
 }
 
 .logo span{
-    color:#7c7cff;
+    color:#9d8cff;
 }
 
 h1{
-    margin-top:28px;
-    font-size:45px;
+    margin-top:30px;
+    font-size:44px;
     line-height:1.1;
-    font-weight:800;
+    font-weight:900;
 }
 
-h1 span{
-    background:linear-gradient(90deg,#7c6cff,#00e5ff,#ff4fd8);
+.gradient{
+    background:linear-gradient(
+        90deg,
+        #7c65ff,
+        #00d9ff,
+        #ff45c8
+    );
     -webkit-background-clip:text;
     color:transparent;
 }
 
 .subtitle{
-    margin:18px auto;
-    max-width:600px;
-    color:#c7c9dc;
-    font-size:17px;
+    max-width:650px;
+    margin:18px auto 0;
+    color:#b9bbce;
     line-height:1.6;
+    font-size:16px;
 }
 
-/* Main Card */
-.main{
+/* MAIN */
+.container{
     width:92%;
-    max-width:650px;
-    margin:35px auto;
+    max-width:680px;
+    margin:30px auto;
 }
 
 .card{
     padding:32px;
-    border-radius:28px;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.14);
+    border-radius:30px;
+    background:rgba(255,255,255,.075);
+    border:1px solid rgba(255,255,255,.14);
     backdrop-filter:blur(20px);
     box-shadow:
-        0 20px 70px rgba(0,0,0,.45),
-        inset 0 1px rgba(255,255,255,.12);
+    0 25px 80px rgba(0,0,0,.5),
+    inset 0 1px rgba(255,255,255,.12);
 }
 
-.card-title{
+.youtube{
+    width:75px;
+    height:55px;
+    margin:0 auto 20px;
+    border-radius:17px;
+    background:#ff0033;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    box-shadow:0 10px 35px #ff003355;
+}
+
+.card h2{
     text-align:center;
     font-size:25px;
     margin-bottom:8px;
 }
 
-.card-text{
+.card p{
     text-align:center;
-    color:#aeb2c8;
+    color:#9296ad;
     margin-bottom:25px;
 }
 
-/* YouTube Icon */
-.youtube-icon{
-    width:70px;
-    height:50px;
-    margin:0 auto 20px;
-    border-radius:16px;
-    background:#ff0033;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    box-shadow:0 10px 35px #ff003355;
-}
-
-.input-box{
+.input-area{
     display:flex;
     gap:10px;
-    background:#050714aa;
-    padding:8px;
+    padding:7px;
     border-radius:17px;
+    background:#03030aaa;
     border:1px solid #ffffff18;
 }
 
 input{
     flex:1;
     min-width:0;
-    border:0;
-    outline:0;
+    outline:none;
+    border:none;
     background:transparent;
     color:white;
-    padding:14px;
+    padding:15px;
     font-size:15px;
 }
 
 input::placeholder{
-    color:#777b94;
+    color:#686b80;
 }
 
-button{
+.create{
     border:0;
+    padding:0 22px;
+    border-radius:13px;
+    color:#fff;
+    font-weight:800;
     cursor:pointer;
-    color:white;
-    font-weight:bold;
-    padding:0 20px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#685cff,#a64dff);
-    box-shadow:0 8px 25px #6c5cff55;
+    background:linear-gradient(135deg,#6855ff,#a640ff);
+    box-shadow:0 8px 25px #6b4cff55;
     transition:.25s;
 }
 
-button:hover{
+.create:hover{
     transform:translateY(-2px);
-    box-shadow:0 12px 35px #6c5cff88;
+    box-shadow:0 12px 35px #6b4cff88;
 }
 
-.note{
+.status{
     text-align:center;
     margin-top:18px;
-    color:#8589a3;
+    color:#85899f;
     font-size:13px;
 }
 
-/* Features */
+/* FEATURES */
 .features{
     width:92%;
-    max-width:900px;
-    margin:40px auto;
+    max-width:950px;
+    margin:35px auto 50px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+    gap:16px;
 }
 
 .feature{
-    padding:22px 15px;
+    padding:24px 15px;
     text-align:center;
-    border-radius:20px;
+    border-radius:22px;
     background:#ffffff08;
     border:1px solid #ffffff12;
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 }
 
-.feature-icon{
-    font-size:28px;
-    margin-bottom:10px;
+.icon{
+    font-size:30px;
+    margin-bottom:12px;
 }
 
 .feature h3{
-    font-size:16px;
-    margin-bottom:7px;
+    font-size:17px;
+    margin-bottom:8px;
 }
 
 .feature p{
-    color:#9296ad;
+    color:#85899e;
     font-size:13px;
     line-height:1.5;
 }
 
-/* Footer */
+/* FOOTER */
 footer{
-    margin-top:55px;
-    padding:30px 20px;
     text-align:center;
+    padding:35px 20px;
     border-top:1px solid #ffffff12;
-    background:#03040bcc;
+    background:#020208cc;
 }
 
 .owner{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:16px;
+    font-size:19px;
+    font-weight:800;
+    margin-bottom:18px;
 }
 
 .owner span{
-    color:#9c8cff;
+    color:#9c8aff;
 }
 
 .whatsapp{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    padding:12px 20px;
-    border-radius:30px;
+    padding:13px 22px;
+    border-radius:50px;
+    color:#fff;
     text-decoration:none;
-    color:white;
+    font-weight:800;
     background:#25D366;
-    font-weight:bold;
-    box-shadow:0 8px 25px #25d36644;
+    box-shadow:0 8px 30px #25d36644;
     transition:.25s;
 }
 
 .whatsapp:hover{
-    transform:translateY(-2px);
+    transform:translateY(-2px) scale(1.02);
 }
 
-.wa-icon{
+.wa{
     font-size:23px;
 }
 
-.copyright{
+.number{
+    margin-top:15px;
+    color:#85899e;
+    font-size:13px;
+}
+
+.copy{
     margin-top:18px;
-    color:#65697e;
+    color:#55586d;
     font-size:12px;
 }
 
-/* Mobile */
+/* MOBILE */
 @media(max-width:650px){
+
+    header{
+        padding-top:32px;
+    }
 
     h1{
         font-size:34px;
     }
 
     .subtitle{
-        font-size:15px;
+        font-size:14px;
     }
 
     .card{
-        padding:23px 17px;
+        padding:23px 16px;
     }
 
-    .input-box{
+    .input-area{
         flex-direction:column;
-        background:#050714cc;
     }
 
-    button{
-        height:50px;
+    .create{
+        height:52px;
     }
 
     .features{
@@ -307,80 +295,87 @@ footer{
 <header>
 
     <div class="logo">
-        ✦ <span>FRESHORTS</span> ✦
+        ✦ <span>ST LEGENDS</span> ✦
     </div>
 
     <h1>
-        Turn YouTube Links<br>
-        Into <span>Free Shorts</span>
+        YouTube Link<br>
+        <span class="gradient">→ Free Shorts</span>
     </h1>
 
     <p class="subtitle">
-        Create Shorts from YouTube links quickly and easily.
-        Simple, fast and beautifully designed for creators.
+        Turn your YouTube video link into Shorts quickly and easily.
+        Simple, fast and creator-friendly.
     </p>
 
 </header>
 
-<main class="main">
+
+<main class="container">
 
     <div class="card">
 
-        <div class="youtube-icon">
+        <div class="youtube">
             ▶
         </div>
 
-        <div class="card-title">
-            YouTube Link → Free Shorts
-        </div>
+        <h2>YouTube Link → Free Shorts</h2>
 
-        <div class="card-text">
+        <p>
             Paste your YouTube video link below
-        </div>
+        </p>
 
-        <div class="input-box">
+        <div class="input-area">
 
             <input
-                type="url"
                 id="youtubeLink"
-                placeholder="Paste YouTube video link here..."
+                type="url"
+                placeholder="Paste YouTube link here..."
             >
 
-            <button onclick="createShorts()">
+            <button class="create" onclick="createShorts()">
                 Create Shorts
             </button>
 
         </div>
 
-        <div class="note">
-            ⚡ Fast • Simple • Creator Friendly
+        <div class="status" id="status">
+            ⚡ Fast • Simple • Easy
         </div>
 
     </div>
 
 </main>
 
+
 <section class="features">
 
     <div class="feature">
-        <div class="feature-icon">⚡</div>
+        <div class="icon">⚡</div>
         <h3>Fast</h3>
-        <p>Quick and simple Shorts creation workflow.</p>
+        <p>
+            Simple and quick workflow for Shorts creators.
+        </p>
     </div>
 
     <div class="feature">
-        <div class="feature-icon">🎬</div>
+        <div class="icon">🎬</div>
         <h3>Shorts Ready</h3>
-        <p>Made especially for short-form video creators.</p>
+        <p>
+            Designed specially for short-form content.
+        </p>
     </div>
 
     <div class="feature">
-        <div class="feature-icon">✨</div>
-        <h3>Easy to Use</h3>
-        <p>No complicated interface. Just paste your link.</p>
+        <div class="icon">✨</div>
+        <h3>Easy</h3>
+        <p>
+            Just paste your YouTube link and get started.
+        </p>
     </div>
 
 </section>
+
 
 <footer>
 
@@ -393,33 +388,51 @@ footer{
         href="https://wa.me/923041393918"
         target="_blank"
     >
-        <span class="wa-icon">☘</span>
-        WhatsApp: 0304 1393918
+        <span class="wa">☘</span>
+        WhatsApp
     </a>
 
-    <div class="copyright">
-        © 2026 Freshorts. All Rights Reserved.
+    <div class="number">
+        0304 1393918
+    </div>
+
+    <div class="copy">
+        © 2026 ST Legends • All Rights Reserved
     </div>
 
 </footer>
+
 
 <script>
 
 function createShorts(){
 
-    const link = document.getElementById("youtubeLink").value.trim();
+    const input =
+        document.getElementById("youtubeLink");
 
-    if(!link){
-        alert("Please paste a YouTube link first.");
+    const status =
+        document.getElementById("status");
+
+    const link = input.value.trim();
+
+    if(link === ""){
+        status.innerHTML =
+        "⚠️ Please paste a YouTube link first.";
         return;
     }
 
-    if(!link.includes("youtube.com") && !link.includes("youtu.be")){
-        alert("Please enter a valid YouTube link.");
+    if(
+        !link.includes("youtube.com") &&
+        !link.includes("youtu.be")
+    ){
+        status.innerHTML =
+        "⚠️ Please enter a valid YouTube link.";
         return;
     }
 
-    alert("YouTube link received! Shorts creation is ready.");
+    status.innerHTML =
+    "✅ YouTube link added successfully!";
+
 }
 
 </script>
